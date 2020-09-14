@@ -36,8 +36,8 @@ class EpsGreedy:
             self.reward_history.append(best_action_reward)
 
             self.sampled_reward_values[best_action_idx] = \
-                (self.sampled_reward_values[best_action_idx] * self.action_selection_counter[best_action_idx] + best_action_reward) \
-                / (self.action_selection_counter[best_action_idx] + 1)
+                (self.sampled_reward_values[best_action_idx] * self.action_selection_counter[best_action_idx]
+                 + best_action_reward) / (self.action_selection_counter[best_action_idx] + 1)
 
             self.action_selection_counter[best_action_idx] += 1
 
@@ -46,8 +46,8 @@ class EpsGreedy:
             self.reward_history.append(estimated_rewards[random_action_idx])
 
             self.sampled_reward_values[random_action_idx] = \
-                (self.sampled_reward_values[random_action_idx] * self.action_selection_counter[random_action_idx] + estimated_rewards[random_action_idx]) \
-                / (self.action_selection_counter[random_action_idx] + 1)
+                (self.sampled_reward_values[random_action_idx] * self.action_selection_counter[random_action_idx] +
+                 estimated_rewards[random_action_idx]) / (self.action_selection_counter[random_action_idx] + 1)
 
             self.action_selection_counter[random_action_idx] += 1
 
